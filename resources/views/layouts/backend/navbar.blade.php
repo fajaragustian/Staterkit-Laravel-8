@@ -1,5 +1,5 @@
 <!-- TopBar -->
-<nav class="navbar navbar-expand navbar-light bg-navbar topbar mb-4 static-top">
+<nav class="navbar navbar-expand navbar-light bg-navbar topbar  static-top">
     <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-3">
         <i class="fa fa-bars"></i>
     </button>
@@ -35,7 +35,9 @@
     </ul>
 </nav>
 <!-- Topbar -->
-
+{{-- <div class="bg-light border">
+    <div class="mx-4">asdasdas</div>
+</div> --}}
 <!-- Modal Logout -->
 <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
     aria-hidden="true">
