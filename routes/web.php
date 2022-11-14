@@ -1,9 +1,12 @@
  <?php
 
     use App\Http\Controllers\Backend\CategoryController;
+    use App\Http\Controllers\Backend\LogController;
     use App\Http\Controllers\Backend\PermissionController;
+    use App\Http\Controllers\Backend\PostController;
     use App\Http\Controllers\Backend\ProfileController;
     use App\Http\Controllers\Backend\RoleController;
+    use App\Http\Controllers\Backend\TagController;
     use App\Http\Controllers\Backend\UserController;
     use App\Models\Category;
     use Illuminate\Support\Facades\Route;
@@ -33,6 +36,8 @@
             Route::resource('permissions', PermissionController::class);
             Route::resource('users', UserController::class);
             Route::resource('categories', CategoryController::class);
+            Route::resource('tags', TagController::class);
+            Route::resource('posts', PostController::class);
             Route::get('profile/edit/', [ProfileController::class, 'Profile'])->name('profile');
             Route::post('profile/update/', [ProfileController::class, 'UpdateProfile'])->name('update-profile');
             Route::get('password/change/', [ProfileController::class, 'Password'])->name('password');

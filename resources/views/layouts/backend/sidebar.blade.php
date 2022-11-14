@@ -34,31 +34,49 @@
                         class="fas fa-cog pr-2"></i>&nbsp;Permissions</a>
                 @endcan
                 @can('log-list')
-                <a class="collapse-item" href="{{route('log-viewer::dashboard')}}"><i
+                <a class="collapse-item" href="{{route('log-viewer::logs.list')}}"><i
                         class="fas fa-newspaper pr-2"></i>&nbsp;Log
                     Viewer</a>
                 @endcan
             </div>
         </div>
     </li>
-    @can('user-list')
     <li class="nav-item">
-        <a class="nav-link" href="{{ route('users.index') }}">
-            <i class="fas fa-users" style="color: #6777ef;"></i>
-            <span>User Management</span>
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePage3" aria-expanded="true"
+            aria-controls="collapsePage3">
+            <i class="fas fa-users-cog" style="color: #6777ef"></i>
+            <span>Access Seo</span>
         </a>
+        <div id="collapsePage3" class="collapse" aria-labelledby="headingPage" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 mt-3 collapse-inner rounded">
+                <h6 class="collapse-header">Action</h6>
+                @can('tags-list')
+                <a class="collapse-item" href="{{route('tags.index')}}"><i class="fas fa-cogs pr-2"></i>&nbsp;Tags</a>
+                @endcan
+                @can('categories-list')
+                <a class="collapse-item" href="{{route('categories.index')}}"><i
+                        class="fas fa-cogs pr-2"></i>&nbsp;Categories</a>
+                @endcan
+            </div>
+        </div>
     </li>
-    @endcan
+    <li class="nav-item ">
+        <a class="nav-link" href="{{route('home')}}">
+            <i class="fas fa-fw fa-solid fa-address-card" style="color: #6777ef"></i>
+            <span>User Management</span></a>
+    </li>
+    <li class="nav-item ">
+        <a class="nav-link" href="{{route('home')}}">
+            <i class="fas fa-fw fa-solid fa-receipt" style="color: #6777ef;"></i>
+            <span>Post Management</span></a>
+    </li>
+
     @else
     <li class="nav-item active">
         <a class="nav-link" href="{{route('home')}}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
     </li>
-    <hr class="sidebar-divider">
-    <div class="sidebar-heading">
-        Pages Dashboard
-    </div>
     @endhasanyrole
     <hr class="sidebar-divider">
     <div class="sidebar-heading">

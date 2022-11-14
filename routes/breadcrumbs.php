@@ -58,7 +58,6 @@ Breadcrumbs::for('roles.edit', function (BreadcrumbTrail $trail, $role) {
     $trail->parent('roles.index');
     $trail->push($role->name, route('roles.edit', $role->id));
 });
-
 // Permission
 // Home > Permission Management
 Breadcrumbs::for('permissions.index', function (BreadcrumbTrail $trail) {
@@ -79,6 +78,49 @@ Breadcrumbs::for('permissions.show', function (BreadcrumbTrail $trail, $permissi
 Breadcrumbs::for('permissions.edit', function (BreadcrumbTrail $trail, $permission) {
     $trail->parent('permissions.index');
     $trail->push($permission->name, route('permissions.edit', $permission->id));
+});
+// Categories
+// Home > Category Management
+Breadcrumbs::for('categories.index', function (BreadcrumbTrail $trail) {
+    $trail->parent('home');
+    $trail->push('Categories Management', route('categories.index'));
+});
+// Home > Category Management
+Breadcrumbs::for('categories.create', function (BreadcrumbTrail $trail) {
+    $trail->parent('categories.index');
+    $trail->push('Add Categories Management', route('categories.create'));
+});
+// Home > Category Management > Show
+Breadcrumbs::for('categories.show', function (BreadcrumbTrail $trail, $category) {
+    $trail->parent('categories.index');
+    $trail->push($category->name, route('categories.show', $category->id));
+});
+// Home > Category Management > Edit
+Breadcrumbs::for('categories.edit', function (BreadcrumbTrail $trail, $category) {
+    $trail->parent('categories.index');
+    $trail->push($category->name, route('categories.edit', $category->id));
+});
+
+// Tags
+// Home > Tags Management
+Breadcrumbs::for('tags.index', function (BreadcrumbTrail $trail) {
+    $trail->parent('home');
+    $trail->push('Tags Management', route('tags.index'));
+});
+// Home > Tags Management
+Breadcrumbs::for('tags.create', function (BreadcrumbTrail $trail) {
+    $trail->parent('tags.index');
+    $trail->push('Add Tags Management', route('tags.create'));
+});
+// Home > Tags Management > Show
+Breadcrumbs::for('tags.show', function (BreadcrumbTrail $trail, $tag) {
+    $trail->parent('tags.index');
+    $trail->push($tag->name, route('tags.show', $tag->id));
+});
+// Home > Tags Management > Edit
+Breadcrumbs::for('tags.edit', function (BreadcrumbTrail $trail, $tag) {
+    $trail->parent('tags.index');
+    $trail->push($tag->name, route('tags.edit', $tag->id));
 });
 // Profile
 Breadcrumbs::for('profile', function (BreadcrumbTrail $trail) {
